@@ -1,7 +1,7 @@
 ---
 title: "How Torontonians Infected COVID-19"
 author: "Jiayi Zeng (1004882166)"
-date: 2020-09-26T21:13:14-05:00
+date: 2020-09-25T21:13:14-05:00
 abstract: This blog is going to talk about how Torontonians infected COVID-19. The data can tell us indirectly the importance of stay a social distance with others and prevent physical meetings that participated by more than 10 people. 
 categories: ["R"]
 tags: ["R Markdown", "plot"]
