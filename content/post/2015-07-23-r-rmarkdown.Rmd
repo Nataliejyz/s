@@ -1,0 +1,50 @@
+---
+title: "How Torontonians Infected COVID-19"
+author: "Jiayi Zeng (1004882166)"
+date: 2020-09-26T21:13:14-05:00
+abstract: This blog is going to talk about how Torontonians infected COVID-19. The data can tell us indirectly the importance of stay a social distance with others and prevent physical meetings that participated by more than 10 people. 
+categories: ["R"]
+tags: ["R Markdown", "plot"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+library(tidyverse)
+library(opendatatoronto)
+```
+
+Author: Jiayi Zeng 
+\n Date: 2020-09-26
+
+## Introduction
+According to WHO (World Health Organization), COVID-19 is ‘the infectious disease caused by the most recently discovered coronavirus. It is most recently discovered coronavirus causes coronavirus disease COVID-19.’ The timeline of COVID-19 in Canada is posted on the website of ‘Canadian Healthcare Network’, and the first Canadian case of COVID-19 was reported by Health Canada on January 25, 2020, and the man is from Toronto. And the COVID-19 pandemic spread out in Toronto in the next few months. 
+
+By making this analysis, I find out that the professional’s advice for keeping a social distance and prevent meetings more than 10 people, is supported by the real-world data. These are something that everyone should get their attention on. In the next paragraphs, I will mention why close contact is not recommended or even prohibited.
+
+In the paragraphs below, I'm going to first discuss the data and then show the graph and talk about the graph. And by the end, I will make a brief conclusion on this analysis and point out some limitations and weaknesses of this study.
+
+## Data Discussion
+The data of this blog is from the City of Toronto Open Data Portal, and it named ‘About COVID-19 Cases in Toronto’. Toronto Public Health is reporting the data of COVID-19 cases in Toronto since the first case was reported in January 2020. The data includes sporadic (occurring in the community) and outbreak-associated, and each line in the data set is the summarized information of an individual case.
+
+## Graph
+```{r analysis, eval=TRUE, echo=FALSE}
+Cov_package<-search_packages(" COVID-19 Cases in Toronto")
+Cov_resources<-Cov_package %>% list_package_resources()
+Cov_statistics<-Cov_resources %>% get_resource()
+Cov_statistics %>% ggplot(aes(x= `Source of Infection`))+geom_bar()+labs(x="Source of Inflection",y="Count Numbers",title="How these people get COVID-19?")
+```
+
+## Graph Discussion
+By making a graph to count how each individual infects COVID-19, I found there are two reasons that caused most Torontonians’ COVID-19: close contact with people and the COVID-19 N/A-outbreak associated, and these two reasons’ result are nearly the same. We are going to focus on the ‘close contact’ caused COVID-19 rather than the N/A-outbreak associated because the specific reason for what caused COVID-19 in the outbreak associated case is vague. More than 6000 Torontonians infect COVID-19 due to close contact, which is a serious number: there are 16942 observations in our data, if we roughly exclude the number of N/A-outbreak associated cases, we can find out that more than half of Torontonians infect COVID-19 from close contact.
+
+Community, institutional and health care cases are considered by many people as the most causes of COVID-19 to Torontonians. And they think these inflections are having a deeper effect on the spread of COVID-19 than close contact. But from the data, we could observe that the total number of these three inflections reaches only about half of close contact cases. Therefore, it’s evidential to say that among other ways of protection, wearing a mask (this is also very important even though we don’t have any data of it here) and staying a social distance with others and prevent a multiplayer meeting is the relatively most effective way to against COVID-19.
+
+## The Limitation and Weakness of This Study
+The data of the COVID-19 cases are reported by Toronto Public Health since the first case started in Toronto. Toronto Public Health gets these data from hospitals or some healthcare institutions, they are collecting the data directly, therefore this is a primary source of data. But it's possible that our primary source of data is incomplete or unusable, which is a limitation and weakness to the data. For myself, I get the data through the Toronto Open Data Portal, and the data is collected by Toronto Public Health, for me, the data is a secondary source. For a secondary source of data, the weakness is that some information is incomplete, the accuracy of the conclusion derived from the data analysis is affected.
+
+## Conclusion
+In conclusion, the two self-protection ways of preventing COVID-19 (keep social distance and prevent multiplayer meetings) are evidential and supported by the real-world data. Thus the COVID-19 inflections are more preventable as long as people are following the advice by the professionals.
+
+## References
+1. COVID-19: A Canadian timeline. (n.d.). Retrieved September 24, 2020, from https://www.canadianhealthcarenetwork.ca/covid-19-a-canadian-timeline
+2. Q&A on coronaviruses (COVID-19). (n.d.). Retrieved September 24, 2020, from https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/q-a-coronaviruses
