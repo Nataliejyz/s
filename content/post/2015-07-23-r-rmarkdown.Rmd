@@ -12,7 +12,7 @@ library(tidyverse)
 library(opendatatoronto)
 ```
 Author: Jiayi Zeng 
-Date:9-25-2020
+Date:2020-09-26
 
 ## Abstract
 This blog is going to talk about how Torontonians infected COVID-19. The data can show us that many of Torontonians infected COVID-19 through close contact. It tell us indirectly the importance of stay a social distance with others and prevent physical meetings that participated by more than 10 people. 
