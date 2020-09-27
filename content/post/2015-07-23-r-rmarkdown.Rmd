@@ -2,8 +2,6 @@
 title: "How Torontonians Infected COVID-19"
 author: "Jiayi Zeng (1004882166)"
 date: 2020-09-25T21:13:14-05:00
-bibliography: "references.bib"
-abstract: This blog is going to talk about how Torontonians infected COVID-19. The data can tell us indirectly the importance of stay a social distance with others and prevent physical meetings that participated by more than 10 people. 
 categories: ["R"]
 tags: ["R Markdown", "plot"]
 ---
@@ -51,9 +49,9 @@ In conclusion, the two self-protection ways of preventing COVID-19 (keep social 
 ## References
 1. COVID-19: A Canadian timeline. (n.d.). Retrieved September 24, 2020, from https://www.canadianhealthcarenetwork.ca/covid-19-a-canadian-timeline
 2. Q&A on coronaviruses (COVID-19). (n.d.). Retrieved September 24, 2020, from https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/q-a-coronaviruses
-3. I used @citetidyverse package.
+3. I used 'tidyverse' package.
 4. The data supported this analysis is from Toronto Open Data Portal, and this is the link for getting this data: https://open.toronto.ca/dataset/covid-19-cases-in-toronto/
 5. The code supported this analysis is available at https://github.com/Nataliejyz/s.git
-6. I used @citeopendatatoronto package.
+6. I used 'opendatatoronto' package.
 7. I used 'blogdown' package: Yihui Xie (2020). blogdown: Create Blogs and Websites with R Markdown. R package version 0.20.
 8. The whole analysis is done in RStudio.
